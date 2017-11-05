@@ -1,0 +1,41 @@
+﻿@model CalculadoraNotasFIAP.Models.Nota
+
+@{
+    ViewBag.Title = "Novo";
+}
+
+<h2>Novo</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">@Html.DisplayNameFor(n => n.Rm)</div>
+                    <div class="col-md-3">@Html.TextBoxFor(n => n.Rm, new { @Class = "form-control" })</div>
+                    <div class="col-md-2">@Html.ValidationMessageFor(n => n.Rm, "", new { @Class = "badge" })</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">@Html.DisplayNameFor(n => n.Nac)</div>
+                    <div class="col-md-3">@Html.TextBoxFor(n => n.Nac, new { @Class = "form-control" })</div>
+                    <div class="col-md-2">@Html.ValidationMessageFor(n => n.Nac, "", new { @Class = "badge" })</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">@Html.DisplayNameFor(n => n.Am)</div>
+                    <div class="col-md-3">@Html.TextBoxFor(n => n.Am, new { @Class = "form-control" })</div>
+                    <div class="col-md-2">@Html.ValidationMessageFor(n => n.Am, "", new { @Class = "badge" })</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">@Html.DisplayNameFor(n => n.Ps)</div>
+                    <div class="col-md-3">@Html.TextBoxFor(n => n.Ps, new { @Class = "form-control" })</div>
+                    <div class="col-md-2">@Html.ValidationMessageFor(n => n.Ps, "", new { @Class = "badge" })</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-1"><input type="submit" class="btn btn-success" value="Salvar" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

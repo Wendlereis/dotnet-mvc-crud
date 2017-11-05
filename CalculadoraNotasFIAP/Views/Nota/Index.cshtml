@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CalculadoraNotasFIAP.Models.Nota>
+
+@{
+    ViewBag.Title = "Notas";
+}
+
+<div class="row">
+    <div class="col-md-1"><h2>Notas</h2></div>
+    <div class="col-md-1">@Html.ActionLink("Novo", "Novo", null, new { @Class = "btn btn-primary", @Id = "btnNovo" })</div>
+</div>
+
+<div class="row">
+    <div class="col-md-offset-2 col-md-8">
+        <table class="table">
+            <tr>
+                <td>@Html.DisplayNameFor(n => n.Rm)</td>
+                <td>@Html.DisplayNameFor(n => n.Nac)</td>
+                <td>@Html.DisplayNameFor(n => n.Am)</td>
+                <td>@Html.DisplayNameFor(n => n.Ps)</td>
+                <td>@Html.DisplayNameFor(n => n.Media)</td>
+                <td>Ações</td>
+            </tr>
+            @foreach (var nota in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(n => nota.Rm)</td>
+                    <td>@Html.DisplayFor(n => nota.Nac)</td>
+                    <td>@Html.DisplayFor(n => nota.Am)</td>
+                    <td>@Html.DisplayFor(n => nota.Ps)</td>
+                    <td>@Html.DisplayFor(n => nota.Media)</td>
+                    <td>@Html.ActionLink("Editar", "Editar", new { rm = nota.Rm }) | @Html.ActionLink("Deletar", "Deletar", new { rm = nota.Rm })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
